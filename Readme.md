@@ -6,7 +6,7 @@ Inside each you will find an .exe file and a config file (for example, in case o
 
 Information about config values:
 
-	* `AD.Domain` - name or address of your AD domain
+	* AD.Domain - name or address of your AD domain
 	
 	* Api.Identifier - unique identifier of your endpoint to authenticate against, in this case, Active Directory. Server needs to have it set during configuration, client just needs to make a request of it.
 	
