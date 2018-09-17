@@ -11,43 +11,46 @@ namespace Client
         public static void Main(string[] args) => MainAsync().GetAwaiter().GetResult();
         private static async Task MainAsync()
         {
-            System.Console.ReadKey();
             // discover endpoints from metadata
-            var disco = await DiscoveryClient.GetAsync("http://localhost:5001");
+            var disco = await DiscoveryClient.GetAsync($"http://{Config.ISAddress}:{Config.ISPort}");
             if (disco.IsError)
             {
                 Console.WriteLine(disco.Error);
                 return;
             }
 
-            Console.WriteLine(disco);
-            System.Console.ReadKey();
-            // request token
-            var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client", "secret");
-            var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("testuser", "testPassword123", "api");
-
-            if (tokenResponse.IsError)
+            while (true)
             {
-                Console.WriteLine(tokenResponse.Error);
-                return;
-            }
+                Console.WriteLine("Input username");
+                var username = Console.ReadLine();
+                Console.WriteLine("Input password");
+                var pass = Console.ReadLine();
+                // request token
+                var tokenClient = new TokenClient(disco.TokenEndpoint, Config.ClientId, Config.ClientSecret);
+                var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync(username, pass, Config.ApiId);
 
-            Console.WriteLine(tokenResponse.Json);
-            Console.WriteLine("\n\n");
-            System.Console.ReadKey();
-            // call api
-            var client = new HttpClient();
-            client.SetBearerToken(tokenResponse.AccessToken);
+                if (tokenResponse.IsError)
+                {
+                    Console.WriteLine(tokenResponse.Json);
+                    continue;
+                }
 
-            var response = await client.GetAsync("http://localhost:5001/identity");
-            if (!response.IsSuccessStatusCode)
-            {
-                Console.WriteLine(response.StatusCode);
-            }
-            else
-            {
-                var content = response.Content.ReadAsStringAsync().Result;
-                Console.WriteLine(JArray.Parse(content));
+                Console.WriteLine(tokenResponse.Json);
+                Console.WriteLine("\n\n");
+                //// call api
+                //var client = new HttpClient();
+                //client.SetBearerToken(tokenResponse.AccessToken);
+
+                //var response = await client.GetAsync("http://localhost:5001/identity");
+                //if (!response.IsSuccessStatusCode)
+                //{
+                //    Console.WriteLine(response.StatusCode);
+                //}
+                //else
+                //{
+                //    var content = response.Content.ReadAsStringAsync().Result;
+                //    Console.WriteLine(JArray.Parse(content));
+                //}
             }
         }
     }

@@ -12953,23 +12953,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PiotrOgrodnik\\.nuget\\packages\\": {},
+    "C:\\Users\\waldek.WW\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\_GIT\\LeoPharmaTests\\IdentityServer4Tests\\IdentityServer4withRSA.csproj",
+      "projectUniqueName": "C:\\Users\\waldek.WW\\Source\\Repos\\IS4Test\\IdentityServer4Tests\\IdentityServer4withRSA.csproj",
       "projectName": "IdentityServer4withRSA",
-      "projectPath": "C:\\_GIT\\LeoPharmaTests\\IdentityServer4Tests\\IdentityServer4withRSA.csproj",
-      "packagesPath": "C:\\Users\\PiotrOgrodnik\\.nuget\\packages\\",
-      "outputPath": "C:\\_GIT\\LeoPharmaTests\\IdentityServer4Tests\\obj\\",
+      "projectPath": "C:\\Users\\waldek.WW\\Source\\Repos\\IS4Test\\IdentityServer4Tests\\IdentityServer4withRSA.csproj",
+      "packagesPath": "C:\\Users\\waldek.WW\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\waldek.WW\\Source\\Repos\\IS4Test\\IdentityServer4Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\PiotrOgrodnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\waldek.WW\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12977,8 +12977,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://www.myget.org/F/predica/api/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {

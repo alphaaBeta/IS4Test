@@ -13,7 +13,7 @@ namespace IdentityServer4withRSA
 
             WebHost.CreateDefaultBuilder(args)
                 .UseKestrel()
-                .UseUrls("http://localhost:5001")
+                .UseUrls($"http://{Config.ISAddress}:{Config.ISPort}")
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
