@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.DirectoryServices.AccountManagement;
 using System.Text;
 using System.Threading.Tasks;
 using IdentityServer4.Models;
@@ -17,14 +18,22 @@ namespace IdentityServer4withRSA.Authentication
         }
         public Task ValidateAsync(ResourceOwnerPasswordValidationContext context)
         {
-            if (_authService.DoesUserExist(context.UserName))
+            try
             {
-                if (_authService.DoesPasswordMatch(context.UserName, context.Password))
+                if (_authService.DoesUserExist(context.UserName))
                 {
-                    context.Result = new GrantValidationResult(context.UserName, "password", null, "local", null);
+                    if (_authService.DoesPasswordMatch(context.UserName, context.Password))
+                    {
+                        context.Result = new GrantValidationResult(context.UserName, "password", null, "local", null);
+                        return Task.FromResult(context.Result);
+                    }
+                    context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "The username and password do not match", null);
                     return Task.FromResult(context.Result);
                 }
-                context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "The username and password do not match", null);
+            }
+            catch (PrincipalServerDownException e)
+            {
+                context.Result = new GrantValidationResult(TokenRequestErrors.InvalidRequest, "Could not reach Principal Server! " + e.Message, null);
                 return Task.FromResult(context.Result);
             }
             context.Result = new GrantValidationResult(TokenRequestErrors.InvalidClient, "The user does not exist", null);
