@@ -19,3 +19,20 @@ Information about config values:
 	* IS.Ip - IP under which the server will be listening for connections. If you're hosting both client and server on local machine, use `localhost`
 	
 	* IS.Port - Port under which the server will be listening for connections. Usually `5001`.
+
+
+Implementing the client in your app is simple. All you need to do is to save discovery data somewhere (as taken from Client's Program.cs):  
+`
+	var disco = await DiscoveryClient.GetAsync($"http://{Config.ISAddress}:{Config.ISPort}");  
+	if (disco.IsError)  
+	{  
+	Console.WriteLine(disco.Error);  
+	}
+`  
+and then use them by requesting a token:  
+`
+	var tokenClient = new TokenClient(disco.TokenEndpoint, Config.ClientId, Config.ClientSecret);  
+	var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync(username, password, Config.ApiId);  
+`  
+
+Then you can check the tokenResponse if the authentication was successful
