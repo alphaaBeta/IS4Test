@@ -1,0 +1,12 @@
+C:\_GIT\LeoPharmaTests\Client\bin\Debug\netcoreapp2.0\Client.dll.config
+C:\_GIT\LeoPharmaTests\Client\bin\Debug\netcoreapp2.0\Client.deps.json
+C:\_GIT\LeoPharmaTests\Client\bin\Debug\netcoreapp2.0\Client.runtimeconfig.json
+C:\_GIT\LeoPharmaTests\Client\bin\Debug\netcoreapp2.0\Client.runtimeconfig.dev.json
+C:\_GIT\LeoPharmaTests\Client\bin\Debug\netcoreapp2.0\Client.dll
+C:\_GIT\LeoPharmaTests\Client\obj\Debug\netcoreapp2.0\Client.csproj.CoreCompileInputs.cache
+C:\_GIT\LeoPharmaTests\Client\obj\Debug\netcoreapp2.0\Client.AssemblyInfoInputs.cache
+C:\_GIT\LeoPharmaTests\Client\obj\Debug\netcoreapp2.0\Client.AssemblyInfo.cs
+C:\_GIT\LeoPharmaTests\Client\bin\Debug\netcoreapp2.0\Client.pdb
+C:\_GIT\LeoPharmaTests\Client\obj\Debug\netcoreapp2.0\Client.csprojAssemblyReference.cache
+C:\_GIT\LeoPharmaTests\Client\obj\Debug\netcoreapp2.0\Client.dll
+C:\_GIT\LeoPharmaTests\Client\obj\Debug\netcoreapp2.0\Client.pdb

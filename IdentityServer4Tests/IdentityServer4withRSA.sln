@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer4withRSA", "IdentityServer4withRSA.csproj", "{84FAF178-8EA0-4451-B070-4B3158FD34D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "..\Client\Client.csproj", "{85A27B64-0CF7-4DE7-920A-AC80ED372195}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84FAF178-8EA0-4451-B070-4B3158FD34D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84FAF178-8EA0-4451-B070-4B3158FD34D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84FAF178-8EA0-4451-B070-4B3158FD34D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84FAF178-8EA0-4451-B070-4B3158FD34D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85A27B64-0CF7-4DE7-920A-AC80ED372195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85A27B64-0CF7-4DE7-920A-AC80ED372195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85A27B64-0CF7-4DE7-920A-AC80ED372195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85A27B64-0CF7-4DE7-920A-AC80ED372195}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0870B6F5-6556-4A47-8B8E-45B91B1E23C3}
+	EndGlobalSection
+EndGlobal
