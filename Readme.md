@@ -1,4 +1,4 @@
-#Identity Server 4 authenticating the client App against AD#
+## Identity Server 4 authenticating the client App against AD
 
 There are alredy built executables for windows in appropriate zip files.
 
